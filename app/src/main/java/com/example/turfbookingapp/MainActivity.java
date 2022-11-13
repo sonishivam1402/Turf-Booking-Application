@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    Button button;
 
 
     @Override
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationView);
         toolbar = findViewById(R.id.toolbar);
+        button = findViewById(R.id.button);
         mAuth = FirebaseAuth.getInstance();
 
         //Step 1
@@ -72,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -84,13 +96,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void loadFragment(Fragment fragment) {
-
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.container, fragment);
-        ft.commit();
-    }
 
     @Override
     protected void onStart() {
