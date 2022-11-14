@@ -21,9 +21,10 @@ public class SignUp extends AppCompatActivity {
 
     TextView AlreadyHaveAcc;
     Button btnSignup;
-    EditText ResEmail;
+    EditText ResEmail,ResName;
     EditText ResPassword;
     FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class SignUp extends AppCompatActivity {
         AlreadyHaveAcc = findViewById(R.id.AlreadyHaveAcc);
         ResEmail = findViewById(R.id.ResEmail);
         ResPassword = findViewById(R.id.ResPassword);
+        ResName = findViewById(R.id.ResName);
         mAuth = FirebaseAuth.getInstance();
 
 
