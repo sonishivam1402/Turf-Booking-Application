@@ -18,6 +18,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    String marker;
 
     // below are the latitude and longitude
     // of 4 different locations.
@@ -27,9 +28,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LatLng Delta9 = new LatLng(22.329110908449245, 73.162939139155);
     LatLng HuddleArena = new LatLng(22.29761671470262, 73.13304456983265);
 
-    // creating array list for adding all our locations.
-    private ArrayList<LatLng> locationArrayList;
-    private ArrayList<String> markerInPosition;
+//    // creating array list for adding all our locations.
+//    private ArrayList<LatLng> locationArrayList;
+//    private ArrayList<String> markerInPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,24 +44,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        // in below line we are initializing our array list.
-        locationArrayList = new ArrayList<>();
-
-        // on below line we are adding our
-        // locations in our array list.
-        locationArrayList.add(Turf106);
-        locationArrayList.add(TheEclipse);
-        locationArrayList.add(Hattrick);
-        locationArrayList.add(Delta9);
-        locationArrayList.add(HuddleArena);
-
-        markerInPosition = new ArrayList<>();
-
-        markerInPosition.add("Turf 106");
-        markerInPosition.add("The Eclipse Sports");
-        markerInPosition.add("Hattrick");
-        markerInPosition.add("Delta9");
-        markerInPosition.add("Huddle Arena");
+//        // in below line we are initializing our array list.
+//        locationArrayList = new ArrayList<>();
+//
+//        // on below line we are adding our
+//        // locations in our array list.
+//        locationArrayList.add(Turf106);
+//        locationArrayList.add(TheEclipse);
+//        locationArrayList.add(Hattrick);
+//        locationArrayList.add(Delta9);
+//        locationArrayList.add(HuddleArena);
+//
+//        markerInPosition = new ArrayList<>();
+//
+//        markerInPosition.add("Turf 106");
+//        markerInPosition.add("The Eclipse Sports");
+//        markerInPosition.add("Hattrick");
+//        markerInPosition.add("Delta9");
+//        markerInPosition.add("Huddle Arena");
     }
 
     /**
@@ -77,9 +78,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        marker = getIntent().getStringExtra("Turf Name");
+        LatLng marker = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(marker).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
 
         // we will be displaying all our markers.
         // for adding markers we are running for loop and
@@ -89,16 +92,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMinZoomPreference(12.0f);
         mMap.setMaxZoomPreference(18.0f);
 
-        for (int i = 0; i < locationArrayList.size(); i++) {
-
-            // below line is use to add marker to each location of our array list.
-            mMap.addMarker(new MarkerOptions().position(locationArrayList.get(i)).title(markerInPosition.get(i)));
-
-            // below lin is use to zoom our camera on map.
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(10.0f));
-
-            // below line is use to move our camera to the specific location.
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(locationArrayList.get(i)));
-        }
+//        for (int i = 0; i < locationArrayList.size(); i++) {
+//
+//            // below line is use to add marker to each location of our array list.
+//            mMap.addMarker(new MarkerOptions().position(locationArrayList.get(i)).title(markerInPosition.get(i)));
+//
+//            // below lin is use to zoom our camera on map.
+//            mMap.animateCamera(CameraUpdateFactory.zoomTo(10.0f));
+//
+//            // below line is use to move our camera to the specific location.
+//            mMap.moveCamera(CameraUpdateFactory.newLatLng(locationArrayList.get(i)));
+//        }
     }
 }

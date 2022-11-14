@@ -2,6 +2,7 @@ package com.example.turfbookingapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -41,6 +44,18 @@ public class TurfAdapter extends RecyclerView.Adapter<TurfAdapter.ViewHolder> {
         holder.TurfIV.setImageResource(model.getTurf_img());
         holder.TurfRating.setRating(model.getTurf_rating());
         holder.TurfPrice.setText(model.getTurf_price());
+
+        holder.TurfPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,booking_detail.class);
+                intent.putExtra("Turf Image",model.getTurf_img());
+                intent.putExtra("Turf Name",model.getTurf_name());
+                intent.putExtra("Turf Location",model.getTurf_area());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
