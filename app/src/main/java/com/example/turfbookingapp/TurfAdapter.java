@@ -14,7 +14,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TurfAdapter extends RecyclerView.Adapter<TurfAdapter.ViewHolder> {
 
@@ -53,6 +57,12 @@ public class TurfAdapter extends RecyclerView.Adapter<TurfAdapter.ViewHolder> {
                 intent.putExtra("Turf Name",model.getTurf_name());
                 intent.putExtra("Turf Location",model.getTurf_area());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                HashMap<String,Object> b = new HashMap<String,Object>();
+                b.put("Turf Name",holder.TurfNameTV.getText().toString());
+                b.put("Turf Area", holder.TurfAreaTV.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Users").child("Bookings").push().setValue(b);
+
                 context.startActivity(intent);
             }
         });

@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
 
@@ -42,6 +45,10 @@ public class SignUp extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                HashMap<String,Object> m = new HashMap<String,Object>();
+                m.put("Name",ResName.getText().toString());
+                m.put("Email",ResEmail.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Users").push().setValue(m);
                 createUser();
 //                startActivity(new Intent(SignUp.this,SignIn.class));
             }
