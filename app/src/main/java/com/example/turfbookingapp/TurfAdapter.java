@@ -58,10 +58,11 @@ public class TurfAdapter extends RecyclerView.Adapter<TurfAdapter.ViewHolder> {
                 intent.putExtra("Turf Location",model.getTurf_area());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                HashMap<String,Object> b = new HashMap<String,Object>();
-                b.put("Turf Name",holder.TurfNameTV.getText().toString());
-                b.put("Turf Area", holder.TurfAreaTV.getText().toString());
-                FirebaseDatabase.getInstance().getReference().child("Users").child("Bookings").push().setValue(b);
+
+//                HashMap<String,Object> b = new HashMap<String,Object>();
+//                b.put("Turf Name",holder.TurfNameTV.getText().toString());
+//                b.put("Turf Area", holder.TurfAreaTV.getText().toString());
+//                FirebaseDatabase.getInstance().getReference().child("Users").child("Bookings").push().setValue(b);
 
                 context.startActivity(intent);
             }

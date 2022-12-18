@@ -5,11 +5,11 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardMaxElevation="12dp"
+    android:layout_margin="4dp"
+    app:cardMaxElevation="2dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
+    app:cardCornerRadius="25dp"
     tools:ignore="MissingConstraints">
 
     <LinearLayout
@@ -54,8 +54,8 @@
                 android:numStars="5"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:stepSize=".5"
-                android:progressTint="@color/purple_700"
-                android:progressBackgroundTint="@color/purple_700"
+                android:progressTint="@color/rating"
+                android:progressBackgroundTint="@color/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -65,6 +65,8 @@
             android:id="@+id/btn_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"
             android:text="Rs. 1000/Hour" />
 
     </LinearLayout>

@@ -1,60 +1,52 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:gravity="center|top"
+    android:background="@color/dark"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:gravity="center|top"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="313dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="36dp"
+        app:srcCompat="@drawable/super_sports_park_gorwa" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="313dp"
-            android:layout_height="215dp"
-            android:layout_marginTop="36dp"
-            app:srcCompat="@drawable/super_sports_park_gorwa" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Welcome to TurfZonee !!"
+        android:textColor="@color/teal_200"
+        android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/akaya_telivigala"
-            android:text="Welcome to TurfZonee !!"
-            android:textColor="@color/teal_200"
-            android:textSize="30sp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's Play Together ..!!"
+        android:textColor="@color/purple_200"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/akaya_telivigala"
-            android:text="Let's Play Together ..!!"
-            android:textColor="@color/purple_200"
-            android:textSize="20sp" />
+    <Button
+        android:id="@+id/button"
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:padding="15dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="@color/main"
+        android:text="Book Now" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="119dp"
-            android:layout_height="103dp"
-            android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/ic_baseline_sports_soccer_24" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="119dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/ic_baseline_sports_soccer_24" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Book Now" />
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

@@ -2,7 +2,9 @@ package com.example.turfbookingapp;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,24 +15,27 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.turfbookingapp.databinding.ActivityMapsBinding;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private String TurfName;
     String marker;
+    private LatLng mkr;
 
     // below are the latitude and longitude
     // of 4 different locations.
-    LatLng Turf106 = new LatLng(22.304372951667684, 73.12184456065236);
-    LatLng TheEclipse = new LatLng(22.336407956224857, 73.12292836984534);
-    LatLng Hattrick = new LatLng(22.353572283307333, 73.17656057778694);
-    LatLng Delta9 = new LatLng(22.329110908449245, 73.162939139155);
-    LatLng HuddleArena = new LatLng(22.29761671470262, 73.13304456983265);
+//    LatLng Turf106 = new LatLng(22.304372951667684, 73.12184456065236);
+//    LatLng TheEclipse = new LatLng(22.336407956224857, 73.12292836984534);
+//    LatLng Hattrick = new LatLng(22.353572283307333, 73.17656057778694);
+//    LatLng Delta9 = new LatLng(22.329110908449245, 73.162939139155);
+//    LatLng HuddleArena = new LatLng(22.29761671470262, 73.13304456983265);
 
 //    // creating array list for adding all our locations.
-//    private ArrayList<LatLng> locationArrayList;
-//    private ArrayList<String> markerInPosition;
+    private ArrayList<LatLng> locationArrayList;
+    private ArrayList<String> markerInPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +50,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
 //        // in below line we are initializing our array list.
-//        locationArrayList = new ArrayList<>();
-//
-//        // on below line we are adding our
-//        // locations in our array list.
+        locationArrayList = new ArrayList<>();
+
+        // on below line we are adding our
+        // locations in our array list.
 //        locationArrayList.add(Turf106);
 //        locationArrayList.add(TheEclipse);
 //        locationArrayList.add(Hattrick);
@@ -80,9 +85,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
 
         marker = getIntent().getStringExtra("Turf Name");
-        LatLng marker = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(marker).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
+
+        if(marker.matches("Hattrick")) {
+            mkr = new LatLng(22.353572283307333, 73.17656057778694);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Chhani"));
+        } else if(marker.matches("Turf 106")) {
+            mkr = new LatLng(22.304372951667684, 73.12184456065236);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Sevasi"));
+        } else if(marker.matches("The Eclipse Sports")) {
+            mkr = new LatLng(22.336407956224857, 73.12292836984534);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in New Alkapuri"));
+        } else if(marker.matches("Delta 9")) {
+            mkr = new LatLng(22.329110908449245, 73.162939139155);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Gorwa"));
+        } else if(marker.matches("Huddle Arena")) {
+            mkr = new LatLng(22.29761671470262, 73.13304456983265);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Vasna - Bhayli"));
+        } else if(marker=="Gameplex Arena") {
+            mkr = new LatLng(22.320611834671244, 73.15771836074914);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Subhanpura"));
+        } else {
+            mkr = new LatLng(22.325463879207227, 73.17309511657088);
+            mMap.addMarker(new MarkerOptions().position(mkr).title("Marker in Gorwa"));
+        }
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mkr));
 
         // we will be displaying all our markers.
         // for adding markers we are running for loop and

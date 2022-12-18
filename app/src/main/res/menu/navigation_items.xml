@@ -5,10 +5,7 @@
         android:id="@+id/optHome"
         android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"/>
-    <item
-        android:id="@+id/optSettings"
-        android:title="Settings"
-        android:icon="@drawable/ic_baseline_settings_24"/>
+    
     <item
         android:id="@+id/optAboutUs"
         android:title="About Us"

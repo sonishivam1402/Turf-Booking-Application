@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Turf Booking App</string>
+    <string name="app_name">TurfX</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,4 +7,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="content_description_media">Hattrick</string>
+
+    <string name="content_about_us">
+
+        A booking application where a user can book the slots for various grounds/ turfs to play outdoor games like cricket,
+        football, volleyball, etc. It’s a sports facility booking application which aims to connect sports facility to their users.
+
+    </string>
 </resources>

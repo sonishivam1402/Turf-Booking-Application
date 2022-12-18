@@ -3,12 +3,15 @@ package com.example.turfbookingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PatternMatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +22,8 @@ public class forgetPassword extends AppCompatActivity {
 
     private EditText forgetemail;
     private Button reset_btn;
+    private String email;
+    ImageView backBtn;
 
     FirebaseAuth auth;
 
@@ -28,8 +33,9 @@ public class forgetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
 
-        forgetemail = findViewById(R.id.forgtemail);
+        forgetemail = findViewById(R.id.forgetemail);
         reset_btn = findViewById(R.id.reset_btn);
+        backBtn = findViewById(R.id.backBtn);
 
         auth = FirebaseAuth.getInstance();
 
@@ -39,10 +45,18 @@ public class forgetPassword extends AppCompatActivity {
                 resetPassword();
             }
         });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SignIn.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void resetPassword(){
-        String email = forgetemail.getText().toString().trim();
+        email = forgetemail.getText().toString().trim();
 
         if(email.isEmpty()){
             forgetemail.setError("Email is Required !!");

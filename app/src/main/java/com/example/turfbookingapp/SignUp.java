@@ -27,7 +27,7 @@ public class SignUp extends AppCompatActivity {
     EditText ResEmail,ResName;
     EditText ResPassword;
     FirebaseAuth mAuth;
-
+    HashMap<String,Object> m;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class SignUp extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashMap<String,Object> m = new HashMap<String,Object>();
+                m = new HashMap<String,Object>();
                 m.put("Name",ResName.getText().toString());
                 m.put("Email",ResEmail.getText().toString());
                 FirebaseDatabase.getInstance().getReference().child("Users").push().setValue(m);

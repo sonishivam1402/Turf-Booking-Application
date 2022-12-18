@@ -55,8 +55,8 @@ public class booking_detail extends AppCompatActivity {
         map_dir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(booking_detail.this,MapsActivity.class);
-                intent.putExtra("Turf Name",tv1.getText());
+                Intent intent = new Intent(booking_detail.this, MapsActivity.class);
+                intent.putExtra("Turf Name", tv1.getText());
                 startActivity(intent);
             }
         });

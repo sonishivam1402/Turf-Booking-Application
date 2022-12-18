@@ -61,10 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.optHome) {
                     startActivity(new Intent(MainActivity.this,MainActivity2.class));
-                } else if (id == R.id.optSettings) {
-                    Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.optAboutUs) {
-                    Toast.makeText(MainActivity.this, "About Us", Toast.LENGTH_SHORT).show();
+                    Intent it = new Intent(getApplicationContext(), AboutActivity.class);
+                    startActivity(it);
                 } else {
                     mAuth.signOut();
                     startActivity(new Intent(MainActivity.this,SignIn.class));
