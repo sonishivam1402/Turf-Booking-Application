@@ -34,22 +34,28 @@ The user finds lists of turf on Google Map to navigate to the turf. It also navi
 
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/ba2e35cd-6060-4796-b7fa-059ebdb155ab)
 
-Home Screen
+<b>Home Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/25e8829a-5827-4236-b8fd-7b5282f8ce62)
 
-Navigation Drawer Screen
+<b>Navigation Drawer Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/9de78f91-fa2c-4c20-8145-ccb47dafd45d)
 
-Turf List Screen
+<b>Turf List Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/ab23ce54-ee1f-4ba9-bb2a-e3b17be48dde)
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/c0215014-5ecc-4be1-9cc3-39a715aff337)
 
-Map Screen
+<b>Map Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/a679ec12-24b1-42fc-83e1-fc05fbaa9f1c)
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/41cc8e1d-d590-42d0-adbe-434d1bba9a28)
 
-Booking Slot Screen
+<b>Booking Slot Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/7dbe8ac4-7214-421e-8f6e-947fb2417b50)
 
-Bill Generating Screen
+<b>Bill Generating Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/3f337dac-402e-4bea-9331-291e4a2053d6)
