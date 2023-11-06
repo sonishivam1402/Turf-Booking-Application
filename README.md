@@ -16,19 +16,22 @@ The list of available turfs in Vadodara appears in form of card view from which 
 <b>BOOKING SCREEN:</b>
 The user shall be provided the number of slots available and he/she can book the slots and generate the bill.
 
-<b>MAP SCREEN</b>
+<b>MAP SCREEN:</b>
 The user finds lists of turf on Google Map to navigate to the turf. It also navigates users to Google Map.
 
 <h3>App Preview </h3>
 
-Splash Screen
+<b>Splash Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/4b580a3c-af3c-47d9-b15c-015f108c03e4)
 
-Login & Sign Up Screen
+<b>Login & Sign Up Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/0b164e47-caea-46d6-8365-bd82178c3e8e)
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/c982f092-b089-4fdd-a52e-89c193a70438)
 
-Reset Password Screen              
+<b>Reset Password Screen</b>
+
 ![image](https://github.com/sonishivam1402/Turf-Booking-Application/assets/109283580/ba2e35cd-6060-4796-b7fa-059ebdb155ab)
 
 Home Screen
